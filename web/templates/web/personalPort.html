@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Thakur | AI Consultant & Strategist</title>
+    <meta name="description" content="AI Consultant specializing in Computer Vision, Generative AI, and Business Strategy. Helping companies implement AI solutions with measurable impact.">
+    <style>
+        /* Professional Color Theme */
+        :root {
+            --primary: #2563eb;      /* Royal blue */
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;     /* Purple */
+            --accent: #10b981;        /* Emerald */
+            --dark: #1e293b;          /* Dark slate */
+            --darker: #0f172a;
+            --light: #f8fafc;         /* Lightest gray */
+            --gray: #94a3b8;          /* Medium gray */
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--darker);
+            color: var(--light);
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.025em;
+        }
+
+        a {
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        /* Header/Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .typewriter {
+            display: inline-block;
+            border-right: 2px solid var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blink 0.75s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--primary); }
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(124, 58, 237, 0.1);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+            border-color: var(--primary);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Tech Chips */
+        .tech-chip {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            margin: 0.2rem;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .tech-chip:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+            text-align: right;
+        }
+
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 8px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        /* Strategy Section */
+        .strategy-section {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+
+        .strategy-game {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .game-scenario {
+            margin-bottom: 2rem;
+        }
+
+        .game-options {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .game-option {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--primary);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .game-option:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .game-feedback {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(30, 41, 59, 0.9);
+            border-radius: 8px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cert-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+            padding: 5rem 0 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: var(--gray);
+            transition: all 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+            text-decoration: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left, .right {
+                left: 0;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Hero Section -->
+    <header>
+        <div class="hero-content">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQGNsED9-0X9mQ/profile-displayphoto-shrink_400_400/B4DZYa6P1gHwAk-/0/1744208201293?e=1753920000&v=beta&t=kF5sVRzRT6QjKxFxtN8X_lsmagu8V3P-rryYlgdRdAw" alt="Raj Thakur" class="profile-image">
+            <h1 class="hero-title">Raj Thakur</h1>
+            <h2 class="hero-subtitle">
+                <span class="typewriter" id="typewriter"></span>
+            </h2>
+            <div class="flex gap-4 mt-6">
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="#projects" class="btn btn-outline">View Projects</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="text-center">About Me</h2>
+        <p class="text-center max-w-2xl mx-auto text-gray-400">AI Consultant bridging the gap between technical implementation and business strategy</p>
+        
+        <div class="about-grid">
+            <div class="card fade-in">
+                <h3>Professional Profile</h3>
+                <p>
+                    AI Consultant with expertise in Computer Vision, Generative AI, and Business Strategy. 
+                    Currently pursuing B.Tech in Computer Technology with AI specialization at SAGE University Indore.
+                </p>
+                <p>
+                    My approach combines deep technical knowledge with strategic business thinking to deliver AI solutions 
+                    that create measurable impact for organizations.
+                </p>
+            </div>
+            
+            <div class="card fade-in">
+                <h3>Leadership</h3>
+                <p>
+                    As the <strong>Chairperson of SUI-IEEE Student Branch</strong> at SAGE University, I lead a team of 
+                    passionate technologists in organizing events, workshops, and research initiatives.
+                </p>
+                <p>
+                    My leadership focuses on fostering innovation, collaboration, and professional development 
+                    among students in AI and related fields.
+                </p>
+            </div>
+            
+            <div class="card fade-in">
+                <h3>Research & Publications</h3>
+                <ul>
+                    <li>2 book chapters published on AI applications</li>
+                    <li>1 research paper in peer-reviewed journal</li>
+                    <li>2 Best Research Paper Presentation awards</li>
+                    <li>Ongoing research in Generative AI for creative applications</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="text-center">Technical Expertise</h2>
+            <p class="text-center max-w-2xl mx-auto text-gray-400">Advanced capabilities across the AI stack</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <h3>Computer Vision</h3>
+                    <p>OpenCV, YOLO, GANs</p>
+                    <div class="project-tags">
+                        <span class="tech-chip">TensorFlow</span>
+                        <span class="tech-chip">PyTorch</span>
+                        <span class="tech-chip">ONNX</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>Generative AI</h3>
+                    <p>Diffusion Models, LLMs</p>
+                    <div class="project-tags">
+                        <span class="tech-chip">HuggingFace</span>
+                        <span class="tech-chip">LangChain</span>
+                        <span class="tech-chip">LlamaIndex</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>AI Automation</h3>
+                    <p>RPA, AI Agents</p>
+                    <div class="project-tags">
+                        <span class="tech-chip">AutoGPT</span>
+                        <span class="tech-chip">BabyAGI</span>
+                        <span class="tech-chip">Python</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>Cloud AI</h3>
+                    <p>AWS, GCP, Azure</p>
+                    <div class="project-tags">
+                        <span class="tech-chip">SageMaker</span>
+                        <span class="tech-chip">Vertex AI</span>
+                        <span class="tech-chip">Bedrock</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>Data Engineering</h3>
+                    <p>ETL, Pipelines</p>
+                    <div class="project-tags">
+                        <span class="tech-chip">Spark</span>
+                        <span class="tech-chip">Airflow</span>
+                        <span class="tech-chip">Kafka</span>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h3>Business Strategy</h3>
+                    <p>AI Implementation</p>
+                    <div class="project-tags">
+                        <span class="tech-chip">ROI Analysis</span>
+                        <span class="tech-chip">KPI Design</span>
+                        <span class="tech-chip">AB Testing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+        <h2 class="text-center">Experience & Leadership</h2>
+        <p class="text-center max-w-2xl mx-auto text-gray-400">My professional journey and leadership roles</p>
+        
+        <div class="timeline">
+            <div class="timeline-item left fade-in">
+                <div class="timeline-content">
+                    <h3>SUI-IEEE Student Branch</h3>
+                    <p class="text-gray-400">2023 - Present</p>
+                    <p><strong>Chairperson</strong></p>
+                    <ul>
+                        <li>Leading a team of 15 executive members</li>
+                        <li>Organized 10+ technical workshops and seminars</li>
+                        <li>Increased membership by 40% year-over-year</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item right fade-in">
+                <div class="timeline-content">
+                    <h3>AI Research</h3>
+                    <p class="text-gray-400">2022 - Present</p>
+                    <p><strong>Researcher</strong></p>
+                    <ul>
+                        <li>Published 2 book chapters on AI applications</li>
+                        <li>Authored research paper on generative models</li>
+                        <li>Received 2 best paper presentation awards</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item left fade-in">
+                <div class="timeline-content">
+                    <h3>Freelance Consultant</h3>
+                    <p class="text-gray-400">2021 - Present</p>
+                    <p><strong>AI Strategy Consultant</strong></p>
+                    <ul>
+                        <li>Helped 5+ businesses implement AI solutions</li>
+                        <li>Developed computer vision systems for retail</li>
+                        <li>Created automation workflows for legal firms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="container">
+        <h2 class="text-center">Certifications</h2>
+        <p class="text-center max-w-2xl mx-auto text-gray-400">Professional credentials validating my expertise</p>
+        
+        <div class="cert-grid">
+            <div class="cert-card fade-in">
+                <h3>AWS Certified Machine Learning Specialty</h3>
+                <p class="text-gray-400">2023 | Validation ID: XYZ123</p>
+                <p>Demonstrated ability to build, train, and deploy machine learning models on AWS.</p>
+            </div>
+            
+            <div class="cert-card fade-in">
+                <h3>TensorFlow Developer Certificate</h3>
+                <p class="text-gray-400">2024</p>
+                <p>Proven skills in building and training models using TensorFlow.</p>
+            </div>
+            
+            <div class="cert-card fade-in">
+                <h3>Deep Learning Specialization</h3>
+                <p class="text-gray-400">DeepLearning.AI</p>
+                <p>Mastery of neural networks, CNNs, RNNs, and transformers.</p>
+            </div>
+            
+            <div class="cert-card fade-in">
+                <h3>Business Strategy Certification</h3>
+                <p class="text-gray-400">University of Virginia</p>
+                <p>Frameworks for competitive advantage and strategic planning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="text-center">Strategic AI Projects</h2>
+            <p class="text-center max-w-2xl mx-auto text-gray-400">Where technical execution meets business impact</p>
+            
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project-card fade-in">
+                    <img src="https://img.freepik.com/premium-photo/smart-retail-analytics-retail-analytics-platforms-convolutional-neural-networks-customer-behavior_1230253-481.jpg?w=2000" alt="Computer Vision Project" class="project-image">
+                    <div class="project-content">
+                        <h3>Smart Retail Analytics</h3>
+                        <p>Computer vision system that reduced inventory discrepancies by 37% while optimizing store layouts.</p>
+                        <div class="project-tags">
+                            <span class="tech-chip">YOLOv8</span>
+                            <span class="tech-chip">TensorRT</span>
+                            <span class="tech-chip">AWS</span>
+                            <span class="tech-chip">Retail Analytics</span>
+                        </div>
+                        <button class="btn btn-outline mt-4 w-full">View Case Study</button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Automation Project" class="project-image">
+                    <div class="project-content">
+                        <h3>Legal Document Automation</h3>
+                        <p>AI-powered contract analysis that reduced processing time from 8 hours to 22 minutes per document.</p>
+                        <div class="project-tags">
+                            <span class="tech-chip">NLP</span>
+                            <span class="tech-chip">LangChain</span>
+                            <span class="tech-chip">RPA</span>
+                            <span class="tech-chip">LegalTech</span>
+                        </div>
+                        <button class="btn btn-outline mt-4 w-full">View Case Study</button>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Generative AI Project" class="project-image">
+                    <div class="project-content">
+                        <h3>Generative Recipe System</h3>
+                        <p>Deep learning model that generates novel recipes based on ingredient constraints and dietary needs.</p>
+                        <div class="project-tags">
+                            <span class="tech-chip">Transformers</span>
+                            <span class="tech-chip">HuggingFace</span>
+                            <span class="tech-chip">NLP</span>
+                            <span class="tech-chip">FoodTech</span>
+                        </div>
+                        <button class="btn btn-outline mt-4 w-full">View Case Study</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="btn">View All Projects</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section id="strategy" class="strategy-section">
+        <div class="container">
+            <h2 class="text-center">Strategic Thinking</h2>
+            <p class="text-center max-w-2xl mx-auto text-gray-400">How I approach complex business problems with AI</p>
+            
+            <div class="strategy-game fade-in">
+                <h3 class="text-center">AI Strategy Challenge</h3>
+                <p class="text-center text-gray-400">Make optimal decisions to maximize your AI startup's success</p>
+                
+                <div class="game-scenario" id="game-scenario">
+                    <h4>Scenario 1: Product Direction</h4>
+                    <p>Your AI startup has limited resources. Do you:</p>
+                    
+                    <div class="game-options">
+                        <button class="game-option" onclick="makeDecision(1, 'A')">A) Build a general-purpose AI API</button>
+                        <button class="game-option" onclick="makeDecision(1, 'B')">B) Focus on a niche vertical solution</button>
+                        <button class="game-option" onclick="makeDecision(1, 'C')">C) Partner with an existing platform</button>
+                    </div>
+                </div>
+                
+                <div class="game-feedback" id="game-feedback"></div>
+                
+                <div class="game-stats">
+                    <div class="stat">
+                        <div class="stat-value" id="resources">100%</div>
+                        <div>Resources</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="market-fit">50%</div>
+                        <div>Market Fit</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="revenue">$0</div>
+                        <div>Revenue</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Raj Thakur</h3>
+                <p>AI Consultant & Strategist helping businesses implement impactful AI solutions.</p>
+                <div class="social-links">
+                    <a href="https://github.com/raj4thakur" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.0375 17.6532 15.9731 17.1738 15.811 16.7238C15.6489 16.2738 15.3929 15.8634 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 0.999999C19.91 0.999999 18.73 0.649999 16 2.48C13.708 1.85882 11.292 1.85882 9 2.48C6.27 0.649999 5.09 0.999999 5.09 0.999999C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.89 9.35726 16.2954 9.19531 16.7399C9.03335 17.1844 8.96681 17.6581 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/raj-thakur-9a4987251/" class="social-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:rajthakur.aurbient@gmail.com" class="social-link" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">AI Strategy Consulting</a></li>
+                    <li><a href="#">Technical Implementation</a></li>
+                    <li><a href="#">Custom AI Solutions</a></li>
+                    <li><a href="#">Workshops & Training</a></li>
+                    <li><a href="#">Research Collaboration</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <p>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92H19C14.03 20.92 9.08 15.97 9.08 11V5C9.08 4.45 9.53 4 10.08 4H13.08C13.63 4 14.08 4.45 14.08 5V9C14.08 9.55 13.63 10 13.08 10H10.08" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        +91 9131248819
+                    </p>
+                    <p>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        rajthakur.aurbient@gmail.com
+                    </p>
+                    <p>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Indore, Madhya Pradesh, India
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 Raj Thakur | AI Consultant & Strategist</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Typewriter Effect
+            const typewriterText = "AI Consultant | Strategist | Researcher — Building Intelligent Systems with Measurable Impact";
+            let i = 0;
+            function typeWriter() {
+                if (i < typewriterText.length) {
+                    document.getElementById("typewriter").textContent += typewriterText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            typeWriter();
+            
+            // Initialize scroll animations
+            initAnimations();
+        });
+
+        // Strategy Game
+        let gameState = {
+            resources: 100,
+            marketFit: 50,
+            revenue: 0,
+            scenario: 1
+        };
+
+        function makeDecision(scenario, choice) {
+            let feedback = '';
+            const feedbackEl = document.getElementById('game-feedback');
+            
+            // Scenario 1: Product Direction
+            if (scenario === 1) {
+                switch(choice) {
+                    case 'A':
+                        feedback = "Building a general-purpose API spreads your resources too thin. Market fit decreases as you try to be everything to everyone.";
+                        gameState.resources -= 30;
+                        gameState.marketFit -= 15;
+                        break;
+                    case 'B':
+                        feedback = "Excellent choice! Focusing on a niche vertical allows you to develop deep domain expertise and create a product that truly solves specific pain points. Market fit increases significantly.";
+                        gameState.resources -= 15;
+                        gameState.marketFit += 25;
+                        gameState.revenue += 50000;
+                        break;
+                    case 'C':
+                        feedback = "Partnership accelerates distribution but reduces control over your product direction and margins. Neutral impact on market fit.";
+                        gameState.resources -= 10;
+                        gameState.marketFit += 5;
+                        gameState.revenue += 20000;
+                        break;
+                }
+                
+                // Advance to next scenario
+                gameState.scenario = 2;
+                document.getElementById('game-scenario').innerHTML = `
+                    <h4>Scenario 2: Technical Approach</h4>
+                    <p>You need to choose a model architecture for your AI solution. Do you:</p>
+                    
+                    <div class="game-options">
+                        <button class="game-option" onclick="makeDecision(2, 'A')">A) Build custom model from scratch</button>
+                        <button class="game-option" onclick="makeDecision(2, 'B')">B) Fine-tune an open-source model</button>
+                        <button class="game-option" onclick="makeDecision(2, 'C')">C) Use a commercial API</button>
+                    </div>
+                `;
+            }
+            // Scenario 2: Technical Approach
+            else if (scenario === 2) {
+                switch(choice) {
+                    case 'A':
+                        feedback = "Building from scratch offers maximum differentiation but consumes massive resources and extends time-to-market. Only recommended if you have truly novel IP requirements.";
+                        gameState.resources -= 40;
+                        gameState.marketFit += 10;
+                        gameState.revenue += 30000;
+                        break;
+                    case 'B':
+                        feedback = "Strategic choice! Fine-tuning balances cost, speed, and customization. Allows you to leverage existing architectures while tailoring to your specific use case.";
+                        gameState.resources -= 20;
+                        gameState.marketFit += 15;
+                        gameState.revenue += 60000;
+                        break;
+                    case 'C':
+                        feedback = "Commercial API gets you to market fastest but with higher ongoing costs and less control. May limit your ability to differentiate long-term.";
+                        gameState.resources -= 10;
+                        gameState.marketFit += 5;
+                        gameState.revenue += 40000;
+                        break;
+                }
+                
+                // Advance to next scenario
+                gameState.scenario = 3;
+                document.getElementById('game-scenario').innerHTML = `
+                    <h4>Scenario 3: Business Model</h4>
+                    <p>How will you monetize your AI solution? Do you:</p>
+                    
+                    <div class="game-options">
+                        <button class="game-option" onclick="makeDecision(3, 'A')">A) Subscription SaaS</button>
+                        <button class="game-option" onclick="makeDecision(3, 'B')">B) Per-usage pricing</button>
+                        <button class="game-option" onclick="makeDecision(3, 'C')">C) Enterprise licensing</button>
+                    </div>
+                `;
+            }
+            // Scenario 3: Business Model
+            else if (scenario === 3) {
+                switch(choice) {
+                    case 'A':
+                        feedback = "Recurring revenue builds stability but requires significant sales and customer success investment. Predictable income helps with planning.";
+                        gameState.resources -= 15;
+                        gameState.revenue += 80000;
+                        break;
+                    case 'B':
+                        feedback = "Usage pricing aligns costs with value but creates revenue volatility. Works well when usage patterns are predictable.";
+                        gameState.resources -= 10;
+                        gameState.revenue += 60000;
+                        break;
+                    case 'C':
+                        feedback = "Enterprise deals bring large payouts but have long sales cycles and require customization. Best for established players.";
+                        gameState.resources -= 25;
+                        gameState.revenue += 150000;
+                        break;
+                }
+                
+                // End game
+                gameState.scenario = 4;
+                let result = '';
+                if (gameState.resources <= 0) {
+                    result = "Ran out of resources! Your startup failed due to cash burn.";
+                } else if (gameState.marketFit < 40) {
+                    result = "Poor market fit. The business struggled to gain traction despite technical execution.";
+                } else if (gameState.revenue < 100000) {
+                    result = "Moderate success. The business is sustainable but not yet thriving. Focus on product-market fit.";
+                } else {
+                    result = "Outstanding success! Your strategic decisions created a valuable, scalable business.";
+                }
+                
+                document.getElementById('game-scenario').innerHTML = `
+                    <h4>Results</h4>
+                    <p>${result}</p>
+                    <p>Final Score: $${gameState.revenue.toLocaleString()} potential annual revenue</p>
+                    <button class="btn mt-4" onclick="resetGame()">Play Again</button>
+                `;
+            }
+            
+            feedbackEl.textContent = feedback;
+            feedbackEl.style.display = 'block';
+            updateGameStats();
+        }
+
+        function updateGameStats() {
+            document.getElementById('resources').textContent = `${Math.max(0, gameState.resources)}%`;
+            document.getElementById('market-fit').textContent = `${Math.max(0, gameState.marketFit)}%`;
+            document.getElementById('revenue').textContent = `$${gameState.revenue.toLocaleString()}`;
+            
+            // Visual indicators
+            document.getElementById('resources').style.color = 
+                gameState.resources < 30 ? 'var(--error)' : gameState.resources < 60 ? 'var(--warning)' : 'var(--success)';
+            document.getElementById('market-fit').style.color = 
+                gameState.marketFit < 40 ? 'var(--error)' : gameState.marketFit < 70 ? 'var(--warning)' : 'var(--success)';
+        }
+
+        function resetGame() {
+            gameState = {
+                resources: 100,
+                marketFit: 50,
+                revenue: 0,
+                scenario: 1
+            };
+            document.getElementById('game-scenario').innerHTML = `
+                <h4>Scenario 1: Product Direction</h4>
+                <p>Your AI startup has limited resources. Do you:</p>
+                
+                <div class="game-options">
+                    <button class="game-option" onclick="makeDecision(1, 'A')">A) Build a general-purpose AI API</button>
+                    <button class="game-option" onclick="makeDecision(1, 'B')">B) Focus on a niche vertical solution</button>
+                    <button class="game-option" onclick="makeDecision(1, 'C')">C) Partner with an existing platform</button>
+                </div>
+            `;
+            document.getElementById('game-feedback').style.display = 'none';
+            updateGameStats();
+        }
+
+        // Scroll Animations
+        function initAnimations() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => observer.observe(el));
+        }
+    </script>
+</body>
+</html>
